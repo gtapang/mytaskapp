@@ -11,7 +11,10 @@ import Foundation
 /// durable, human-readable, Hermes-wiki-aligned representation.
 public struct MarkdownFileStore: Sendable {
     public let rootURL: URL
-    private let fileManager: FileManager = .default
+
+    // Computed, not stored: FileManager is not Sendable on Apple SDKs and a
+    // stored reference would poison this struct's Sendable conformance.
+    private var fileManager: FileManager { .default }
 
     public init(rootURL: URL) {
         self.rootURL = rootURL
