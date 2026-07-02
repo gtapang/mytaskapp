@@ -29,6 +29,10 @@ builds on a Mac — locally or on the `macos` CI job.
 
 ## Building the app (Mac, Xcode 26+)
 
+New machine? See [`docs/SETUP.md`](docs/SETUP.md) for the full walkthrough —
+MacBook prep (macOS update, Xcode from the App Store, Apple Intelligence),
+git identity, GitHub auth, cloning, and building.
+
 One-shot setup — installs Command Line Tools / Homebrew / XcodeGen (as needed),
 verifies your Xcode is 26+, and generates the project:
 
