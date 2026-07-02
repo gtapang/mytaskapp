@@ -1,5 +1,6 @@
 import SwiftUI
 import SwiftData
+import UniformTypeIdentifiers
 
 /// Minimal settings: the Hermes connection and the mirror folder. Everything
 /// else is convention.
