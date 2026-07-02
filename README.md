@@ -29,6 +29,15 @@ builds on a Mac — locally or on the `macos` CI job.
 
 ## Building the app (Mac, Xcode 26+)
 
+One-shot setup — installs Command Line Tools / Homebrew / XcodeGen (as needed),
+verifies your Xcode is 26+, and generates the project:
+
+```sh
+./scripts/bootstrap.zsh --open      # add --test to also run the core tests
+```
+
+Or do it by hand:
+
 ```sh
 brew install xcodegen
 xcodegen generate
