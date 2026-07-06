@@ -1,0 +1,12 @@
+{
+  "": {
+    "swift-dependencies": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageTests.build/primary.swiftdeps"
+  },
+  "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageTests.derived/runner.swift": {
+    "dependencies": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageTests.build/runner.d",
+    "object": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageTests.build/runner.swift.o",
+    "swiftmodule": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageTests.build/runner~partial.swiftmodule",
+    "swift-dependencies": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageTests.build/runner.swiftdeps",
+    "diagnostics": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageTests.build/runner.dia"
+  }
+}

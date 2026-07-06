@@ -1,0 +1,8 @@
+# Node / Electron
+node_modules/
+dist/
+out/
+smoke.png
+
+# macOS
+.DS_Store

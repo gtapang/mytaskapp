@@ -1,0 +1,433 @@
+/* The whole visual identity: one accent, neutral surfaces, generous
+   whitespace, quiet typography. If a screen needs more than this, the screen
+   is probably too busy. */
+
+:root {
+  --accent: #4a7869;
+  --accent-soft: rgba(74, 120, 105, 0.1);
+  --bg: #f4f4f1;
+  --surface: #ffffff;
+  --surface-2: #ecece7;
+  --text: #24282a;
+  --text-2: #6b7278;
+  --text-3: #9aa1a7;
+  --danger: #b4544a;
+  --warn: #c07f3a;
+  --radius: 12px;
+  --pad: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1c1e1f;
+    --surface: #26292b;
+    --surface-2: #303436;
+    --text: #e8e8e5;
+    --text-2: #a3a9ad;
+    --text-3: #71777c;
+    --accent: #6fa392;
+    --accent-soft: rgba(111, 163, 146, 0.14);
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+.app {
+  display: flex;
+  height: 100%;
+}
+
+/* --- navigation ---------------------------------------------------------- */
+
+.nav {
+  width: 168px;
+  flex-shrink: 0;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border-right: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.nav button {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-2);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.nav button:hover {
+  background: var(--accent-soft);
+}
+
+.nav button.active {
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.nav .spacer {
+  flex: 1;
+}
+
+.nav .badge {
+  margin-left: auto;
+  font-size: 11px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-radius: 9px;
+  padding: 1px 7px;
+}
+
+/* --- layout -------------------------------------------------------------- */
+
+.screen {
+  flex: 1;
+  overflow-y: auto;
+  padding: 28px 32px 48px;
+}
+
+.screen h1 {
+  font-size: 22px;
+  font-weight: 650;
+  margin-bottom: 18px;
+}
+
+.section-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin: 22px 0 8px;
+}
+
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 13px 15px;
+  margin-bottom: 8px;
+}
+
+.card.clickable {
+  cursor: pointer;
+}
+
+.card.clickable:hover {
+  outline: 1.5px solid var(--accent-soft);
+}
+
+.muted {
+  color: var(--text-2);
+}
+
+.faint {
+  color: var(--text-3);
+  font-size: 12px;
+}
+
+.row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.row .grow {
+  flex: 1;
+}
+
+/* --- controls ------------------------------------------------------------ */
+
+button.primary,
+button.quiet,
+button.chip {
+  font: inherit;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 7px 14px;
+}
+
+button.primary {
+  background: var(--accent);
+  color: white;
+  font-weight: 600;
+}
+
+button.primary:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+button.quiet {
+  background: transparent;
+  color: var(--text-2);
+}
+
+button.quiet:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+button.chip {
+  font-size: 12px;
+  padding: 4px 11px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+input[type='text'],
+input[type='url'],
+input[type='password'],
+input[type='date'],
+input[type='datetime-local'],
+textarea,
+select {
+  font: inherit;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid rgba(127, 127, 127, 0.25);
+  border-radius: 8px;
+  padding: 7px 10px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid var(--accent-soft);
+  border-color: var(--accent);
+}
+
+textarea.editor {
+  width: 100%;
+  min-height: 50vh;
+  border: none;
+  background: transparent;
+  resize: none;
+  font-size: 15px;
+  line-height: 1.6;
+  padding: 4px 0;
+}
+
+textarea.editor:focus {
+  outline: none;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 11.5px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-radius: 999px;
+  padding: 2px 9px;
+  margin-right: 5px;
+}
+
+.dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+/* --- markdown preview ---------------------------------------------------- */
+
+.md {
+  font-size: 15px;
+  line-height: 1.65;
+  max-width: 70ch;
+}
+
+.md h1 { font-size: 21px; margin: 16px 0 8px; }
+.md h2 { font-size: 18px; margin: 14px 0 6px; }
+.md h3, .md h4 { font-size: 15.5px; margin: 12px 0 5px; }
+.md p { margin: 7px 0; }
+.md .li { display: flex; gap: 9px; margin: 3px 0; }
+.md .li .marker { color: var(--text-3); flex-shrink: 0; }
+.md blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 12px;
+  color: var(--text-2);
+  font-style: italic;
+  margin: 8px 0;
+}
+.md pre {
+  background: var(--surface-2);
+  border-radius: 8px;
+  padding: 10px 12px;
+  overflow-x: auto;
+  font-size: 13px;
+  margin: 8px 0;
+}
+.md code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.92em; background: var(--surface-2); border-radius: 4px; padding: 1px 4px; }
+.md pre code { background: none; padding: 0; }
+.md hr { border: none; border-top: 1px solid rgba(127,127,127,0.2); margin: 14px 0; }
+.md .task-done { text-decoration: line-through; color: var(--text-2); }
+
+/* --- eisenhower ---------------------------------------------------------- */
+
+.matrix {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.quadrant {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 13px;
+  min-height: 170px;
+  border: 1.5px solid transparent;
+}
+
+.quadrant.targeted {
+  border-color: var(--accent);
+}
+
+.quadrant .chip-task {
+  background: var(--surface-2);
+  border-radius: 8px;
+  padding: 6px 9px;
+  margin-top: 6px;
+  font-size: 13px;
+  cursor: grab;
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+
+/* --- calendar ------------------------------------------------------------ */
+
+.month-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 3px;
+}
+
+.month-grid .dow {
+  text-align: center;
+  font-size: 11px;
+  color: var(--text-3);
+  padding: 4px 0;
+}
+
+.month-grid .day {
+  border: none;
+  background: transparent;
+  font: inherit;
+  border-radius: 8px;
+  padding: 6px 0 3px;
+  cursor: pointer;
+  text-align: center;
+  color: var(--text);
+}
+
+.month-grid .day:hover { background: var(--accent-soft); }
+.month-grid .day.selected { background: var(--accent); color: white; }
+.month-grid .day.today { font-weight: 700; color: var(--accent); }
+.month-grid .day.selected.today { color: white; }
+.month-grid .day .marks { height: 5px; display: flex; gap: 2px; justify-content: center; }
+.month-grid .day .marks i { width: 3.5px; height: 3.5px; border-radius: 50%; background: var(--accent); }
+.month-grid .day.selected .marks i { background: white; }
+.month-grid .day .marks i.task-mark { background: var(--warn); }
+
+/* --- modal --------------------------------------------------------------- */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.32);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 12vh;
+  z-index: 10;
+}
+
+.modal {
+  background: var(--surface);
+  border-radius: 14px;
+  padding: 20px;
+  width: min(560px, 92vw);
+  max-height: 74vh;
+  overflow-y: auto;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.25);
+}
+
+.modal h2 {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 9px 0;
+}
+
+.form-row label {
+  width: 110px;
+  flex-shrink: 0;
+  color: var(--text-2);
+  font-size: 13px;
+}
+
+.form-row input,
+.form-row select {
+  flex: 1;
+}
+
+.toolbar {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.toolbar .grow { flex: 1; }
+
+.banner {
+  background: var(--accent-soft);
+  border-radius: 10px;
+  padding: 9px 13px;
+  font-size: 13px;
+  color: var(--text-2);
+  margin-bottom: 10px;
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+}
+
+.empty {
+  color: var(--text-3);
+  text-align: center;
+  padding: 40px 0;
+}
