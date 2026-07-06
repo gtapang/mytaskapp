@@ -6,34 +6,41 @@ on:
   pull_request:
 
 jobs:
-  # The core package is pure Swift and builds anywhere — this is the fast,
-  # always-available check (same thing that runs in Linux dev environments).
-  core-linux:
-    name: Core tests (Linux)
+  test:
+    name: Typecheck, tests, build
     runs-on: ubuntu-24.04
-    container: swift:6.1-noble
     steps:
       - uses: actions/checkout@v4
-      - name: Run HermesNotesCore tests
-        working-directory: HermesNotesCore
-        run: swift test
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install (Electron binary skipped — not needed for checks)
+        run: npm ci
+        env:
+          ELECTRON_SKIP_BINARY_DOWNLOAD: "1"
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
 
-  # Full app build needs Xcode with the iOS 26 SDK (Foundation Models).
-  # If the pinned runner image lags behind, bump `runs-on` / the Xcode
-  # version selection below rather than skipping the job.
-  app-ios:
-    name: App build (iOS)
-    runs-on: macos-26
+  # Full boot smoke with the real Electron binary under a virtual display:
+  # starts the app, waits for the window to paint, captures a screenshot,
+  # fails on any renderer error.
+  smoke:
+    name: Boot smoke (Electron + Xvfb)
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
-      - name: Generate Xcode project
-        run: |
-          brew install xcodegen
-          xcodegen generate
-      - name: Build for iOS Simulator
-        run: |
-          xcodebuild build \
-            -project HermesNotes.xcodeproj \
-            -scheme HermesNotes \
-            -destination 'generic/platform=iOS Simulator' \
-            CODE_SIGNING_ALLOWED=NO
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: xvfb-run -a npx electron scripts/smoke.cjs --no-sandbox --disable-gpu
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: smoke-screenshot
+          path: smoke.png
+          if-no-files-found: ignore

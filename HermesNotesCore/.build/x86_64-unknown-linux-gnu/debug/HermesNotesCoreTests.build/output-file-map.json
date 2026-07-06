@@ -1,0 +1,40 @@
+{
+  "": {
+    "swift-dependencies": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/primary.swiftdeps"
+  },
+  "/home/user/mytaskapp/HermesNotesCore/Tests/HermesNotesCoreTests/DayStartTests.swift": {
+    "dependencies": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/DayStartTests.d",
+    "object": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/DayStartTests.swift.o",
+    "swiftmodule": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/DayStartTests~partial.swiftmodule",
+    "swift-dependencies": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/DayStartTests.swiftdeps",
+    "diagnostics": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/DayStartTests.dia"
+  },
+  "/home/user/mytaskapp/HermesNotesCore/Tests/HermesNotesCoreTests/HermesTests.swift": {
+    "dependencies": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/HermesTests.d",
+    "object": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/HermesTests.swift.o",
+    "swiftmodule": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/HermesTests~partial.swiftmodule",
+    "swift-dependencies": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/HermesTests.swiftdeps",
+    "diagnostics": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/HermesTests.dia"
+  },
+  "/home/user/mytaskapp/HermesNotesCore/Tests/HermesNotesCoreTests/MarkdownFileStoreTests.swift": {
+    "dependencies": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/MarkdownFileStoreTests.d",
+    "object": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/MarkdownFileStoreTests.swift.o",
+    "swiftmodule": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/MarkdownFileStoreTests~partial.swiftmodule",
+    "swift-dependencies": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/MarkdownFileStoreTests.swiftdeps",
+    "diagnostics": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/MarkdownFileStoreTests.dia"
+  },
+  "/home/user/mytaskapp/HermesNotesCore/Tests/HermesNotesCoreTests/MarkdownParserTests.swift": {
+    "dependencies": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/MarkdownParserTests.d",
+    "object": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/MarkdownParserTests.swift.o",
+    "swiftmodule": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/MarkdownParserTests~partial.swiftmodule",
+    "swift-dependencies": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/MarkdownParserTests.swiftdeps",
+    "diagnostics": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/MarkdownParserTests.dia"
+  },
+  "/home/user/mytaskapp/HermesNotesCore/Tests/HermesNotesCoreTests/NoteFileCodecTests.swift": {
+    "dependencies": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/NoteFileCodecTests.d",
+    "object": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/NoteFileCodecTests.swift.o",
+    "swiftmodule": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/NoteFileCodecTests~partial.swiftmodule",
+    "swift-dependencies": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/NoteFileCodecTests.swiftdeps",
+    "diagnostics": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/NoteFileCodecTests.dia"
+  }
+}

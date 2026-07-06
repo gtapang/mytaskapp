@@ -1,0 +1,82 @@
+{
+  "": {
+    "swift-dependencies": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/primary.swiftdeps"
+  },
+  "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Domain/CoreTypes.swift": {
+    "dependencies": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/CoreTypes.d",
+    "object": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/CoreTypes.swift.o",
+    "swiftmodule": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/CoreTypes~partial.swiftmodule",
+    "swift-dependencies": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/CoreTypes.swiftdeps",
+    "diagnostics": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/CoreTypes.dia"
+  },
+  "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Domain/NoteSnapshot.swift": {
+    "dependencies": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/NoteSnapshot.d",
+    "object": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/NoteSnapshot.swift.o",
+    "swiftmodule": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/NoteSnapshot~partial.swiftmodule",
+    "swift-dependencies": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/NoteSnapshot.swiftdeps",
+    "diagnostics": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/NoteSnapshot.dia"
+  },
+  "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Files/FrontMatter.swift": {
+    "dependencies": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/FrontMatter.d",
+    "object": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/FrontMatter.swift.o",
+    "swiftmodule": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/FrontMatter~partial.swiftmodule",
+    "swift-dependencies": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/FrontMatter.swiftdeps",
+    "diagnostics": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/FrontMatter.dia"
+  },
+  "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Files/MarkdownFileStore.swift": {
+    "dependencies": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/MarkdownFileStore.d",
+    "object": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/MarkdownFileStore.swift.o",
+    "swiftmodule": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/MarkdownFileStore~partial.swiftmodule",
+    "swift-dependencies": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/MarkdownFileStore.swiftdeps",
+    "diagnostics": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/MarkdownFileStore.dia"
+  },
+  "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Files/NoteFileCodec.swift": {
+    "dependencies": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/NoteFileCodec.d",
+    "object": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/NoteFileCodec.swift.o",
+    "swiftmodule": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/NoteFileCodec~partial.swiftmodule",
+    "swift-dependencies": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/NoteFileCodec.swiftdeps",
+    "diagnostics": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/NoteFileCodec.dia"
+  },
+  "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Hermes/HermesClient.swift": {
+    "dependencies": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/HermesClient.d",
+    "object": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/HermesClient.swift.o",
+    "swiftmodule": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/HermesClient~partial.swiftmodule",
+    "swift-dependencies": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/HermesClient.swiftdeps",
+    "diagnostics": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/HermesClient.dia"
+  },
+  "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Hermes/HermesOutbox.swift": {
+    "dependencies": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/HermesOutbox.d",
+    "object": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/HermesOutbox.swift.o",
+    "swiftmodule": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/HermesOutbox~partial.swiftmodule",
+    "swift-dependencies": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/HermesOutbox.swiftdeps",
+    "diagnostics": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/HermesOutbox.dia"
+  },
+  "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Hermes/HermesPayloads.swift": {
+    "dependencies": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/HermesPayloads.d",
+    "object": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/HermesPayloads.swift.o",
+    "swiftmodule": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/HermesPayloads~partial.swiftmodule",
+    "swift-dependencies": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/HermesPayloads.swiftdeps",
+    "diagnostics": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/HermesPayloads.dia"
+  },
+  "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Markdown/MarkdownBlock.swift": {
+    "dependencies": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/MarkdownBlock.d",
+    "object": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/MarkdownBlock.swift.o",
+    "swiftmodule": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/MarkdownBlock~partial.swiftmodule",
+    "swift-dependencies": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/MarkdownBlock.swiftdeps",
+    "diagnostics": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/MarkdownBlock.dia"
+  },
+  "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Planning/DayStart.swift": {
+    "dependencies": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/DayStart.d",
+    "object": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/DayStart.swift.o",
+    "swiftmodule": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/DayStart~partial.swiftmodule",
+    "swift-dependencies": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/DayStart.swiftdeps",
+    "diagnostics": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/DayStart.dia"
+  },
+  "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Support/Slug.swift": {
+    "dependencies": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/Slug.d",
+    "object": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/Slug.swift.o",
+    "swiftmodule": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/Slug~partial.swiftmodule",
+    "swift-dependencies": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/Slug.swiftdeps",
+    "diagnostics": "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/Slug.dia"
+  }
+}

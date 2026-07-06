@@ -1,183 +1,138 @@
 # Hermes Notes — Architecture
 
-Single-user, offline-first, Apple-native note-taking app with tightly linked
-tasks, a calm Today day-starter, in-app calendar, Eisenhower planning, Apple
-on-device intelligence (Foundation Models), and Hermes as the higher-order
-orchestration backend.
+Single-user, offline-first, cross-platform desktop app: markdown notes with
+tightly linked tasks, a calm Today day-starter, in-app calendar, Eisenhower
+planning, local AI assists, and Hermes as the higher-order orchestration
+backend.
+
+> **History.** v0.1 was an Apple-native implementation (SwiftUI, SwiftData,
+> Foundation Models, App Intents) — it lives in git history up to commit
+> `0a7ce66`. v0.2 removed the Apple-native requirement: the app now runs on
+> macOS, Linux, and Windows with no Xcode dependency, and the whole codebase
+> builds and verifies on Linux.
 
 ## Stack
 
 | Concern | Choice |
 |---|---|
-| Language / UI | Swift 6, SwiftUI |
-| App state persistence | SwiftData (source of truth for structured state) |
-| File persistence | Markdown mirror of notes into the preferred `~/Desktop/M` directory (macOS) / user-picked bookmarked folder (iOS) |
-| On-device AI | Foundation Models framework (`LanguageModelSession` + `@Generable` typed outputs), iOS 26+ |
-| System integration | App Intents (Siri, Spotlight, Apple Intelligence) |
-| Calendar | EventKit, read-focused in v1, rendered in-app |
-| Reminders | Local `UserNotifications`, optional per note/task |
-| Rendering polish | SwiftUI `ShaderLibrary` Metal shaders, used sparingly |
+| Shell | Electron (main + preload + renderer, strict context isolation) |
+| Language | TypeScript everywhere |
+| UI | React + a single small calm-theme CSS file |
+| App state persistence | Plain JSON store with atomic writes (single user; no native deps) |
+| File persistence | Markdown mirror of notes into `~/Desktop/M/HermesNotes` (configurable) |
+| Local AI | Optional Ollama-compatible endpoint; honest rule-based fallbacks without one |
+| Calendar | In-app month grid + day list; optional ICS feed subscriptions |
+| Quick capture | In-app + global shortcut (⌘/Ctrl+Shift+Space) from anywhere on the desktop |
 | Orchestration | Hermes HTTP API + durable offline outbox |
+| Tests | Vitest (39 tests) + an Electron boot-smoke under Xvfb in CI |
 
-Minimum deployment target: **iOS 26** (required by Foundation Models). All
-Foundation Models call sites are availability-gated behind a protocol so the
-app degrades gracefully when Apple Intelligence is unavailable on device.
-
-## Layering: a Linux-buildable core under an Apple shell
-
-The codebase splits into two layers so most of the logic can be built and
-tested from any environment (including the Linux containers this project is
-developed in), while the product stays fully Apple-native:
+## Layering
 
 ```
-┌──────────────────────────────────────────────────────────┐
-│ HermesNotesApp — Apple shell (Xcode 26 / macOS only)     │
-│                                                          │
-│  Features (SwiftUI)                                      │
-│  Today · Notes · Calendar · Tasks · Eisenhower · Inbox   │
-│  ──────────────────────────────────────────────────────  │
-│  AppEnvironment (composition root, @Observable services) │
-│  ─────────────┬───────────────────┬────────────────────  │
-│  Apple AI     │ HermesSyncService │ Platform             │
-│  Foundation   │ NoteMirrorService │ EventKit calendar    │
-│  Models       │ (bridges to core) │ UNNotifications      │
-│  (@Generable) │                   │ App Intents · Metal  │
-│  ──────────────────────────────────────────────────────  │
-│  SwiftData ModelContainer (operational source of truth)  │
-├──────────────────────────────────────────────────────────┤
-│ HermesNotesCore — pure Swift package (builds on Linux)   │
-│                                                          │
-│  Domain types (TaskStatus, EisenhowerQuadrant, …)        │
-│  NoteSnapshot value model · Markdown block parser        │
-│  FrontMatter + NoteFileCodec + MarkdownFileStore mirror  │
-│  HermesClient + payloads + durable HermesOutbox (actor)  │
-│  DayStart digest/prompt/fallback logic                   │
-│  → `cd HermesNotesCore && swift test` (28 tests, any OS) │
-└──────────────────────────────────────────────────────────┘
+┌────────────────────────────────────────────────────────────┐
+│ renderer (React)                                           │
+│ Today · Notes · Calendar · Tasks · Eisenhower · Inbox      │
+│ + NoteEditor, QuickCapture, Settings, Eisenhower drag/drop │
+├────────────────────────────────────────────────────────────┤
+│ preload: typed contextBridge (window.hermes ≙ shared/api)  │
+├────────────────────────────────────────────────────────────┤
+│ main (Electron)                                            │
+│  JsonStore (atomic JSON, source of truth)                  │
+│  MarkdownMirror bridge (write-through on note saves)       │
+│  HermesSyncService (pull context/captures, drain outbox)   │
+│  Intelligence (Ollama chat w/ JSON output, or fallbacks)   │
+│  ICS fetch + cache · global shortcut · IPC handlers        │
+├────────────────────────────────────────────────────────────┤
+│ core (pure TS, no Electron imports — fully unit-tested)    │
+│  types · markdown block/inline parser · front matter       │
+│  note file codec · MarkdownMirror · slug                   │
+│  HermesClient + HermesOutbox · DayStart digest/prompt/     │
+│  fallback · ICS parser                                     │
+└────────────────────────────────────────────────────────────┘
 ```
 
-CI runs the core tests in a Linux Swift container on every push and builds
-the full app on a macOS runner (`.github/workflows/ci.yml`), so the repo
-never needs a local Mac mid-iteration — only for running the app itself.
+`src/core` is dependency-free, portable TypeScript ported 1:1 (same tests)
+from the original Swift core. `src/main` touches Electron and the filesystem.
+The renderer only talks through the typed `window.hermes` bridge.
 
-## Object model (SwiftData)
+## Object model (`src/core/types.ts`)
 
 - **Note** — id, title, markdown body, timestamps, tags, folder, notebook,
-  project, pinned, archived, optional reminder, linked tasks.
-- **TaskItem** — id, title, status, due date, optional reminder, priority,
-  Eisenhower quadrant, linked note, tags, project, timestamps. (`TaskItem`
-  avoids colliding with Swift Concurrency's `Task`.)
-- **Project** — name, description, active, linked notes/tasks.
-- **InboxItem** — source (local capture | Telegram), raw content, processed
-  flag, resulting note link, on-device classification result.
-- **HermesContextItem** — type (email | calendar | summary), title, summary,
-  source metadata, importance score / rule hit, optional note/task link.
-- **OutboxAction** — durable queue entry for Hermes calls made while offline.
+  project, pinned, archived, optional reminder.
+- **TaskItem** — id, title, status, priority, Eisenhower quadrant, due date,
+  optional reminder, `noteId` link, project, tags, timestamps.
+- **Project**, **InboxItem** (local capture | Telegram, with dedupe
+  `sourceId` and classification suggestion), **HermesContextItem** (email |
+  calendar | summary with importance score / rule hit).
 
-Notes and tasks are *separate first-class objects*; linking is a relationship,
-never an embedding. Enum-typed fields are stored as raw strings for schema
-stability, with typed computed accessors.
+Notes and tasks are *separate first-class objects*; linking is a foreign key
+(`task.noteId`), never an embedding. Dates are ISO strings so the store stays
+plain JSON.
 
 ## Hybrid intelligence split
 
-**Apple Foundation Models (on-device, fast, private):**
-- note summarization (`NoteSummary`)
-- task extraction from note text (`ExtractedTaskList`)
-- tag suggestion (`TagSuggestions`)
-- inbox classification (`InboxClassification`: note / task / both / reference)
-- lightweight day-start synthesis for the Today header
+**Local model (optional, Ollama-compatible endpoint in Settings):**
+note summarization, tag suggestion, task extraction, inbox classification,
+day-start briefing. All prompts request strict JSON (`format: "json"`), are
+validated on arrival, and every feature degrades to a deterministic fallback
+(markdown checkbox extraction, rule-based day-start summary) — the app never
+fabricates intelligence and never requires a model.
 
-All of these use `@Generable` structs so model output lands directly in typed
-app data — no string parsing. Gated by `SystemLanguageModel.default.availability`.
+**Hermes (server, durable, cross-system):** important email surfacing,
+important calendar surfacing (hybrid rules + inferred importance), wiki
+routing of notes into the markdown knowledge workflow, Telegram capture in
+(→ Inbox) and structured pushback out, cross-system orchestration.
 
-**Hermes (server, durable, cross-system):**
-- important email surfacing
-- important calendar item surfacing (hybrid rules + inferred importance)
-- wiki routing of selected notes into the markdown knowledge workflow
-- Telegram capture in (→ Inbox) and structured pushback out
-- any cross-system workflow orchestration
+The app never blocks on Hermes: reads populate `HermesContextItem` rows when
+a sync succeeds (on launch, window focus, pull-to-refresh); writes go through
+a **durable outbox** persisted as JSON, drained with retry, ordering
+preserved, poisoned actions dropped after 8 attempts.
 
-The app never blocks on Hermes: reads populate `HermesContextItem` rows when a
-sync succeeds; writes go through `HermesOutbox`, which persists actions in
-SwiftData and drains them with retry whenever the app is foregrounded or a
-call succeeds. Offline the app is fully usable; Hermes context is simply stale.
-
-### Hermes API contract (v1, expected by `HermesClient`)
+### Hermes API contract (v1, expected by `core/hermes.ts`)
 
 ```
-GET  /v1/context/important?since=<iso8601>     → [HermesContextPayload]
-GET  /v1/capture/telegram?since=<iso8601>      → [TelegramCapturePayload]
-POST /v1/wiki/route          {noteID, title, markdown, tags}
+GET  /v1/context/important?since=<iso8601>   → HermesContextPayload[]
+GET  /v1/capture/telegram?since=<iso8601>    → TelegramCapturePayload[]
+POST /v1/wiki/route          {noteID, title, document, tags}
 POST /v1/telegram/push       {text, replyToCaptureID?}
 ```
 
-Bearer-token auth; base URL + token are user-configurable in Settings and kept
-in `UserDefaults` (token in Keychain is a fast follow).
+Bearer-token auth; base URL + token configurable in Settings.
 
 ## Local-first storage
 
-SwiftData is the operational store. `MarkdownFileStore` mirrors every note as
-a markdown file with YAML front matter (id, title, tags, timestamps, links)
-under the preferred directory:
+The JSON store (`<userAppData>/hermes-notes/data.json`, atomic tmp+rename
+writes) is the operational store. `MarkdownMirror` mirrors every note as a
+markdown file with YAML front matter (id, title, tags, timestamps, links)
+under the preferred directory — default `~/Desktop/M/HermesNotes`, changeable
+in Settings. Layout:
 
-- **macOS-class environments:** `~/Desktop/M/HermesNotes/…`
-- **iOS:** a user-selected folder (security-scoped bookmark), defaulting to the
-  app's Documents container until one is chosen.
-
-The mirror is write-through on save and is the human-readable/exportable
-representation aligned with the Hermes wiki workflow. SwiftData remains the
-source of truth for v1; if two-way file sync is ever added it must preserve
-the local-first model.
-
-## App Intents
-
-- `CaptureToInboxIntent` — frictionless capture from Siri/Spotlight/Action button.
-- `CreateNoteIntent`, `CreateTaskIntent` — structured creation.
-- `OpenScreenIntent` + `AppScreen` enum — deep-link to Today/Inbox/etc.
-- `NoteEntity` (IndexedEntity) — notes surface in Spotlight and are available
-  to Apple Intelligence.
-- `HermesNotesShortcuts` — curated phrases ("Capture a thought", "Start my day").
-
-## Metal usage (deliberately small)
-
-A single `CalmEffects.metal` file exposes SwiftUI-compatible `stitchable`
-shaders:
-
-- `calmGrain` — a very subtle animated paper grain on the Today header card.
-- `quadrantWash` — a soft radial wash behind Eisenhower quadrants that keeps
-  drag-and-drop feeling fluid without stacked translucent layers.
-
-Both respect Reduce Motion / Reduce Transparency and are trivially removable —
-they are polish, not structure.
-
-## Calm-UI rules encoded in `CalmTheme`
-
-- One accent color, neutral surfaces, generous whitespace.
-- Progressive disclosure: organization (tags/folders/notebooks/projects) lives
-  behind an organizer sheet, never inline chrome on the note list.
-- Reminders render as a single quiet glyph, never a banner.
-- No badges/counters except Inbox unprocessed count.
-
-## v1 open questions → current decisions
-
-| Question | Decision |
-|---|---|
-| DB + file strategy | SwiftData + write-through markdown mirror |
-| Linux buildability | Split architecture: `HermesNotesCore` SwiftPM package builds/tests on Linux; Apple shell builds via Xcode locally or on macOS CI runners |
-| Desktop path | Same SwiftUI codebase; Mac Catalyst is enabled in project.yml, native macOS target is additive later |
-| Calendar provider | EventKit only in v1 (system-configured accounts) |
-| Hermes offline auth/queue | Bearer token + SwiftData-backed outbox with retry |
-| FM vs Hermes split | FM = anything answerable from on-device text; Hermes = anything needing email/calendar/Telegram/wiki context |
-| How much Metal | Two shaders, both optional |
-
-## Building
-
-The project uses [XcodeGen](https://github.com/yonaskolb/XcodeGen):
-
-```sh
-brew install xcodegen
-xcodegen generate
-open HermesNotes.xcodeproj
+```
+<root>/Notes/<notebook|folder|Unfiled>/<slug>-<id8>.md
+<root>/Archive/…                       (archived notes)
 ```
 
-Requires Xcode 26+ (Foundation Models SDK).
+The mirror is write-through on save, human-readable, and aligned with the
+Hermes wiki workflow (wiki routing sends the exact same document format).
+
+## Calendar
+
+The Calendar screen merges three sources per day: events from subscribed
+**ICS feeds** (tolerant minimal parser, 10-minute cache), **tasks due** that
+day, and **Hermes time context** (`occursAt`). Event creation stays in the
+user's real calendar app in v1; events can spawn linked notes/tasks.
+
+## Calm-UI rules (`theme.css`)
+
+One accent, neutral surfaces, generous whitespace, progressive disclosure
+(organization lives in the note's Organize sheet), reminders as a single
+quiet glyph, no badges except the Inbox count.
+
+## Verification
+
+- `npm run typecheck` — strict TS across renderer + main configs.
+- `npm test` — 39 Vitest tests over the core (markdown, front matter, codec,
+  mirror on a real temp fs, Hermes client/outbox with a mock transport,
+  day-start, ICS) and the JSON store.
+- `scripts/smoke.cjs` — boots the **real app** under Xvfb, fails on any
+  renderer error, captures a screenshot. Runs in CI on every push.

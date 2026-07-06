@@ -1,10 +1,8 @@
-# Xcode / Swift
-.build/
-.swiftpm/
-DerivedData/
-xcuserdata/
-*.xcodeproj
-!project.yml
+# Node / Electron
+node_modules/
+dist/
+out/
+smoke.png
 
 # macOS
 .DS_Store

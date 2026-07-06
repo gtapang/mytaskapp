@@ -1,66 +1,44 @@
 # Hermes Notes
 
-A single-user, offline-first, Apple-native note-taking app with tightly
-linked tasks, a calm **Today** day-starter, in-app **Calendar**, a dedicated
-**Eisenhower** planning screen, and an **Inbox** fed by quick capture and
-Telegram (via Hermes). Apple's Foundation Models handle fast on-device
-intelligence; **Hermes** stays the higher-order orchestration backend.
+A calm, single-user, offline-first **desktop** app for notes + tasks: quick
+capture into an Inbox, a **Today** day-starter, in-app **Calendar**, dedicated
+**Eisenhower** planning, markdown notes with tightly linked (but separate)
+tasks — with optional local-AI assists and **Hermes** as the orchestration
+backend (email/calendar importance, Telegram capture, wiki routing).
 
-Built per [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) from the Hermes
-Notes PRD.
+Cross-platform (macOS / Linux / Windows) via Electron + TypeScript + React.
+No Xcode, no platform lock-in. Design rationale in
+[`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md); machine setup in
+[`docs/SETUP.md`](docs/SETUP.md).
+
+> v0.1 was Apple-native (SwiftUI/SwiftData/Foundation Models); it lives in
+> git history up to `0a7ce66`. v0.2 removed the Apple-native requirement.
+
+## Run it
+
+```sh
+npm install
+npm start
+```
+
+Requires Node 22+. Quick capture from anywhere: ⌘⇧Space / Ctrl+Shift+Space.
 
 ## Layout
 
 ```
-HermesNotesCore/   Pure-Swift package: domain types, markdown engine,
-                   note file mirror (front matter + .md), Hermes client
-                   + durable offline outbox, day-start logic.
-                   Builds and tests on ANY platform, including Linux:
-                       cd HermesNotesCore && swift test
-HermesNotesApp/    Apple shell: SwiftUI screens, SwiftData models,
-                   Foundation Models intelligence, App Intents, EventKit
-                   calendar, notifications, Metal polish shaders.
-project.yml        XcodeGen definition for the iOS app target.
-```
-
-This split is deliberate: the core is verifiable from Linux (CI runs it in a
-Swift container), while everything Apple-only stays in a thin shell that
-builds on a Mac — locally or on the `macos` CI job.
-
-## Building the app (Mac, Xcode 26+)
-
-New machine? See [`docs/SETUP.md`](docs/SETUP.md) for the full walkthrough —
-MacBook prep (macOS update, Xcode from the App Store, Apple Intelligence),
-git identity, GitHub auth, cloning, and building.
-
-One-shot setup — installs Command Line Tools / Homebrew / XcodeGen (as needed),
-verifies your Xcode is 26+, and generates the project:
-
-```sh
-./scripts/bootstrap.zsh --open      # add --test to also run the core tests
-```
-
-Or do it by hand:
-
-```sh
-brew install xcodegen
-xcodegen generate
-open HermesNotes.xcodeproj
-```
-
-Run the `HermesNotes` scheme on an iOS 26 simulator or device. Foundation
-Models features require a device with Apple Intelligence enabled; the app
-degrades gracefully (rule-based day-start, no suggestions) everywhere else.
-
-> The core package was developed and tested on Linux (`swift test`, 28 tests
-> passing). The SwiftUI shell was authored off-Mac and gets its build
-> verification from the macOS CI job / your first local build.
-
-## Running core tests anywhere
-
-```sh
-cd HermesNotesCore
-swift test        # works on macOS or Linux (Swift 6+)
+src/core/       Pure TypeScript, no Electron: domain types, markdown block +
+                inline parser, front-matter note codec, markdown file mirror,
+                Hermes client + durable offline outbox, day-start logic,
+                ICS parser. Fully unit-tested.
+src/main/       Electron main: JSON store (atomic writes), mirror bridge,
+                Hermes sync service, local-AI layer (Ollama or fallbacks),
+                ICS fetching, global shortcut, typed IPC.
+src/preload/    contextBridge exposing the typed API (src/shared/api.ts).
+src/renderer/   React UI: Today · Notes · Calendar · Tasks · Eisenhower ·
+                Inbox, note editor with read mode, quick capture, settings.
+tests/          Vitest suite (39 tests).
+scripts/smoke.cjs  Boots the real app (Xvfb in CI), screenshots, fails on
+                   renderer errors.
 ```
 
 ## The six screens
@@ -69,19 +47,31 @@ swift test        # works on macOS or Linux (Swift 6+)
 |---|---|
 | Today | Calm day starter: briefing, due tasks, events, Hermes-important items, quick capture |
 | Notes | Markdown notes — edit/read toggle, search, pin, archive; organization behind a sheet |
-| Calendar | In-app month grid + day list merging events, due tasks, Hermes time context |
+| Calendar | Month grid + day list merging ICS events, due tasks, Hermes time context |
 | Tasks | Separate first-class tasks: due dates, reminders, priority, note links |
 | Eisenhower | Dedicated 2×2 planning matrix with drag-and-drop |
 | Inbox | Process captures (local + Telegram) into notes, tasks, or both |
 
-## Hermes configuration
-
-Settings (gear on Today) → base URL + bearer token. The expected API contract
-is documented in `docs/ARCHITECTURE.md`. All Hermes writes go through a
-durable offline outbox; the app never blocks on the network.
-
 ## Local-first storage
 
-SwiftData is the operational store. Every note is mirrored as a markdown file
-with YAML front matter — on Mac-class targets under `~/Desktop/M/HermesNotes`,
-on iOS in a folder you pick in Settings (e.g. one that syncs to `~/Desktop/M`).
+App state lives in an atomic JSON store; every note is mirrored as a
+markdown file with YAML front matter under `~/Desktop/M/HermesNotes`
+(configurable) — human-readable, durable, and aligned with the Hermes wiki
+workflow.
+
+## Intelligence
+
+- **Local (optional):** point Settings at any Ollama-compatible endpoint for
+  summaries, tag suggestions, task extraction, inbox classification, and the
+  day-start briefing. Without a model, honest rule-based fallbacks apply.
+- **Hermes:** important email/calendar surfacing, Telegram capture in and
+  structured pushback out, wiki routing — all writes through a durable
+  offline outbox, so the app never blocks on the network.
+
+## Verify
+
+```sh
+npm run typecheck && npm test && npm run build
+```
+
+CI runs those plus a full Electron boot-smoke under Xvfb on every push.

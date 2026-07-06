@@ -1,0 +1,11 @@
+/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Domain/CoreTypes.swift
+/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Domain/NoteSnapshot.swift
+/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Files/FrontMatter.swift
+/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Files/MarkdownFileStore.swift
+/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Files/NoteFileCodec.swift
+/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Hermes/HermesClient.swift
+/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Hermes/HermesOutbox.swift
+/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Hermes/HermesPayloads.swift
+/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Markdown/MarkdownBlock.swift
+/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Planning/DayStart.swift
+/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Support/Slug.swift

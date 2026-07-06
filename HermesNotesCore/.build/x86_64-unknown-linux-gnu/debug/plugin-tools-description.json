@@ -1,0 +1,993 @@
+{
+  "builtTestProducts" : [
+    {
+      "binaryPath" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageTests.xctest",
+      "packagePath" : "/home/user/mytaskapp/HermesNotesCore",
+      "productName" : "HermesNotesCorePackageTests"
+    }
+  ],
+  "copyCommands" : {
+
+  },
+  "explicitTargetDependencyImportCheckingMode" : {
+    "none" : {
+
+    }
+  },
+  "generatedSourceTargetSet" : [
+    "HermesNotesCorePackageDiscoveredTests"
+  ],
+  "pluginDescriptions" : [
+
+  ],
+  "swiftCommands" : {
+    "C.HermesNotesCore-x86_64-unknown-linux-gnu-debug.module" : {
+      "executable" : "/tmp/claude-0/-home-user-mytaskapp/964a73d7-5bf1-5203-96f2-ded1ac40fed0/scratchpad/swift-6.3.3-RELEASE-ubuntu24.04/usr/bin/swiftc",
+      "fileList" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/sources",
+      "importPath" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Domain/CoreTypes.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Domain/NoteSnapshot.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Files/FrontMatter.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Files/MarkdownFileStore.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Files/NoteFileCodec.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Hermes/HermesClient.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Hermes/HermesOutbox.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Hermes/HermesPayloads.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Markdown/MarkdownBlock.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Planning/DayStart.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Support/Slug.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/swift-version--7BB3674F7DD9E9D5.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "HermesNotesCore",
+      "moduleOutputPath" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/Modules/HermesNotesCore.swiftmodule",
+      "objects" : [
+        "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/CoreTypes.swift.o",
+        "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/NoteSnapshot.swift.o",
+        "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/FrontMatter.swift.o",
+        "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/MarkdownFileStore.swift.o",
+        "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/NoteFileCodec.swift.o",
+        "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/HermesClient.swift.o",
+        "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/HermesOutbox.swift.o",
+        "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/HermesPayloads.swift.o",
+        "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/MarkdownBlock.swift.o",
+        "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/DayStart.swift.o",
+        "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/Slug.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "x86_64-unknown-linux-gnu",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j4",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/include/HermesNotesCore-Swift.h",
+        "-swift-version",
+        "6",
+        "-g",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "hermesnotescore",
+        "-Xcc",
+        "-fno-omit-frame-pointer"
+      ],
+      "outputFileMapPath" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/CoreTypes.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/NoteSnapshot.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/FrontMatter.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/MarkdownFileStore.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/NoteFileCodec.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/HermesClient.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/HermesOutbox.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/HermesPayloads.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/MarkdownBlock.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/DayStart.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/Slug.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/Modules/HermesNotesCore.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Domain/CoreTypes.swift",
+        "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Domain/NoteSnapshot.swift",
+        "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Files/FrontMatter.swift",
+        "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Files/MarkdownFileStore.swift",
+        "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Files/NoteFileCodec.swift",
+        "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Hermes/HermesClient.swift",
+        "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Hermes/HermesOutbox.swift",
+        "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Hermes/HermesPayloads.swift",
+        "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Markdown/MarkdownBlock.swift",
+        "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Planning/DayStart.swift",
+        "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Support/Slug.swift"
+      ],
+      "tempsPath" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.HermesNotesCorePackageDiscoveredTests-x86_64-unknown-linux-gnu-debug.module" : {
+      "executable" : "/tmp/claude-0/-home-user-mytaskapp/964a73d7-5bf1-5203-96f2-ded1ac40fed0/scratchpad/swift-6.3.3-RELEASE-ubuntu24.04/usr/bin/swiftc",
+      "fileList" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageDiscoveredTests.build/sources",
+      "importPath" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageDiscoveredTests.derived/HermesNotesCoreTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageDiscoveredTests.derived/all-discovered-tests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/swift-version--7BB3674F7DD9E9D5.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/Modules/HermesNotesCoreTests.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageDiscoveredTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "HermesNotesCorePackageDiscoveredTests",
+      "moduleOutputPath" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/Modules/HermesNotesCorePackageDiscoveredTests.swiftmodule",
+      "objects" : [
+        "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageDiscoveredTests.build/HermesNotesCoreTests.swift.o",
+        "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageDiscoveredTests.build/all-discovered-tests.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "x86_64-unknown-linux-gnu",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j4",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageDiscoveredTests.build/include/HermesNotesCorePackageDiscoveredTests-Swift.h",
+        "-g",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "hermesnotescore",
+        "-Xcc",
+        "-fno-omit-frame-pointer"
+      ],
+      "outputFileMapPath" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageDiscoveredTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageDiscoveredTests.build/HermesNotesCoreTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageDiscoveredTests.build/all-discovered-tests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/Modules/HermesNotesCorePackageDiscoveredTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageDiscoveredTests.derived/HermesNotesCoreTests.swift",
+        "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageDiscoveredTests.derived/all-discovered-tests.swift"
+      ],
+      "tempsPath" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageDiscoveredTests.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.HermesNotesCorePackageTests-x86_64-unknown-linux-gnu-debug.module" : {
+      "executable" : "/tmp/claude-0/-home-user-mytaskapp/964a73d7-5bf1-5203-96f2-ded1ac40fed0/scratchpad/swift-6.3.3-RELEASE-ubuntu24.04/usr/bin/swiftc",
+      "fileList" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageTests.build/sources",
+      "importPath" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageTests.derived/runner.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/swift-version--7BB3674F7DD9E9D5.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/Modules/HermesNotesCoreTests.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/Modules/HermesNotesCorePackageDiscoveredTests.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "HermesNotesCorePackageTests",
+      "moduleOutputPath" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/Modules/HermesNotesCorePackageTests.swiftmodule",
+      "objects" : [
+        "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageTests.build/runner.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "x86_64-unknown-linux-gnu",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j4",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageTests.build/include/HermesNotesCorePackageTests-Swift.h",
+        "-g",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "hermesnotescore",
+        "-Xcc",
+        "-fno-omit-frame-pointer"
+      ],
+      "outputFileMapPath" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageTests.build/runner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/Modules/HermesNotesCorePackageTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageTests.derived/runner.swift"
+      ],
+      "tempsPath" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageTests.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.HermesNotesCoreTests-x86_64-unknown-linux-gnu-debug.module" : {
+      "executable" : "/tmp/claude-0/-home-user-mytaskapp/964a73d7-5bf1-5203-96f2-ded1ac40fed0/scratchpad/swift-6.3.3-RELEASE-ubuntu24.04/usr/bin/swiftc",
+      "fileList" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/sources",
+      "importPath" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/Tests/HermesNotesCoreTests/DayStartTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/Tests/HermesNotesCoreTests/HermesTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/Tests/HermesNotesCoreTests/MarkdownFileStoreTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/Tests/HermesNotesCoreTests/MarkdownParserTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/Tests/HermesNotesCoreTests/NoteFileCodecTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/swift-version--7BB3674F7DD9E9D5.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/Modules/HermesNotesCore.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "HermesNotesCoreTests",
+      "moduleOutputPath" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/Modules/HermesNotesCoreTests.swiftmodule",
+      "objects" : [
+        "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/DayStartTests.swift.o",
+        "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/HermesTests.swift.o",
+        "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/MarkdownFileStoreTests.swift.o",
+        "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/MarkdownParserTests.swift.o",
+        "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/NoteFileCodecTests.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "x86_64-unknown-linux-gnu",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j4",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-swift-version",
+        "6",
+        "-g",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "hermesnotescore",
+        "-Xcc",
+        "-fno-omit-frame-pointer"
+      ],
+      "outputFileMapPath" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/DayStartTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/HermesTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/MarkdownFileStoreTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/MarkdownParserTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/NoteFileCodecTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/Modules/HermesNotesCoreTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/home/user/mytaskapp/HermesNotesCore/Tests/HermesNotesCoreTests/DayStartTests.swift",
+        "/home/user/mytaskapp/HermesNotesCore/Tests/HermesNotesCoreTests/HermesTests.swift",
+        "/home/user/mytaskapp/HermesNotesCore/Tests/HermesNotesCoreTests/MarkdownFileStoreTests.swift",
+        "/home/user/mytaskapp/HermesNotesCore/Tests/HermesNotesCoreTests/MarkdownParserTests.swift",
+        "/home/user/mytaskapp/HermesNotesCore/Tests/HermesNotesCoreTests/NoteFileCodecTests.swift"
+      ],
+      "tempsPath" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build",
+      "wholeModuleOptimization" : false
+    }
+  },
+  "swiftFrontendCommands" : {
+
+  },
+  "swiftTargetScanArgs" : {
+    "HermesNotesCore" : [
+      "/tmp/claude-0/-home-user-mytaskapp/964a73d7-5bf1-5203-96f2-ded1ac40fed0/scratchpad/swift-6.3.3-RELEASE-ubuntu24.04/usr/bin/swiftc",
+      "-module-name",
+      "HermesNotesCore",
+      "-package-name",
+      "hermesnotescore",
+      "-c",
+      "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Domain/CoreTypes.swift",
+      "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Domain/NoteSnapshot.swift",
+      "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Files/FrontMatter.swift",
+      "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Files/MarkdownFileStore.swift",
+      "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Files/NoteFileCodec.swift",
+      "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Hermes/HermesClient.swift",
+      "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Hermes/HermesOutbox.swift",
+      "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Hermes/HermesPayloads.swift",
+      "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Markdown/MarkdownBlock.swift",
+      "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Planning/DayStart.swift",
+      "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Support/Slug.swift",
+      "-I",
+      "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/Modules",
+      "-target",
+      "x86_64-unknown-linux-gnu",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j4",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/include/HermesNotesCore-Swift.h",
+      "-swift-version",
+      "6",
+      "-g",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "hermesnotescore",
+      "-Xcc",
+      "-fno-omit-frame-pointer",
+      "-driver-use-frontend-path",
+      "/tmp/claude-0/-home-user-mytaskapp/964a73d7-5bf1-5203-96f2-ded1ac40fed0/scratchpad/swift-6.3.3-RELEASE-ubuntu24.04/usr/bin/swiftc"
+    ],
+    "HermesNotesCorePackageDiscoveredTests" : [
+      "/tmp/claude-0/-home-user-mytaskapp/964a73d7-5bf1-5203-96f2-ded1ac40fed0/scratchpad/swift-6.3.3-RELEASE-ubuntu24.04/usr/bin/swiftc",
+      "-module-name",
+      "HermesNotesCorePackageDiscoveredTests",
+      "-package-name",
+      "hermesnotescore",
+      "-c",
+      "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageDiscoveredTests.derived/HermesNotesCoreTests.swift",
+      "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageDiscoveredTests.derived/all-discovered-tests.swift",
+      "-I",
+      "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/Modules",
+      "-target",
+      "x86_64-unknown-linux-gnu",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j4",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageDiscoveredTests.build/include/HermesNotesCorePackageDiscoveredTests-Swift.h",
+      "-g",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "hermesnotescore",
+      "-Xcc",
+      "-fno-omit-frame-pointer",
+      "-driver-use-frontend-path",
+      "/tmp/claude-0/-home-user-mytaskapp/964a73d7-5bf1-5203-96f2-ded1ac40fed0/scratchpad/swift-6.3.3-RELEASE-ubuntu24.04/usr/bin/swiftc"
+    ],
+    "HermesNotesCorePackageTests" : [
+      "/tmp/claude-0/-home-user-mytaskapp/964a73d7-5bf1-5203-96f2-ded1ac40fed0/scratchpad/swift-6.3.3-RELEASE-ubuntu24.04/usr/bin/swiftc",
+      "-module-name",
+      "HermesNotesCorePackageTests",
+      "-package-name",
+      "hermesnotescore",
+      "-c",
+      "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageTests.derived/runner.swift",
+      "-I",
+      "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/Modules",
+      "-target",
+      "x86_64-unknown-linux-gnu",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j4",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageTests.build/include/HermesNotesCorePackageTests-Swift.h",
+      "-g",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "hermesnotescore",
+      "-Xcc",
+      "-fno-omit-frame-pointer",
+      "-driver-use-frontend-path",
+      "/tmp/claude-0/-home-user-mytaskapp/964a73d7-5bf1-5203-96f2-ded1ac40fed0/scratchpad/swift-6.3.3-RELEASE-ubuntu24.04/usr/bin/swiftc"
+    ],
+    "HermesNotesCoreTests" : [
+      "/tmp/claude-0/-home-user-mytaskapp/964a73d7-5bf1-5203-96f2-ded1ac40fed0/scratchpad/swift-6.3.3-RELEASE-ubuntu24.04/usr/bin/swiftc",
+      "-module-name",
+      "HermesNotesCoreTests",
+      "-package-name",
+      "hermesnotescore",
+      "-c",
+      "/home/user/mytaskapp/HermesNotesCore/Tests/HermesNotesCoreTests/DayStartTests.swift",
+      "/home/user/mytaskapp/HermesNotesCore/Tests/HermesNotesCoreTests/HermesTests.swift",
+      "/home/user/mytaskapp/HermesNotesCore/Tests/HermesNotesCoreTests/MarkdownFileStoreTests.swift",
+      "/home/user/mytaskapp/HermesNotesCore/Tests/HermesNotesCoreTests/MarkdownParserTests.swift",
+      "/home/user/mytaskapp/HermesNotesCore/Tests/HermesNotesCoreTests/NoteFileCodecTests.swift",
+      "-I",
+      "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/Modules",
+      "-target",
+      "x86_64-unknown-linux-gnu",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j4",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-swift-version",
+      "6",
+      "-g",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "hermesnotescore",
+      "-Xcc",
+      "-fno-omit-frame-pointer",
+      "-driver-use-frontend-path",
+      "/tmp/claude-0/-home-user-mytaskapp/964a73d7-5bf1-5203-96f2-ded1ac40fed0/scratchpad/swift-6.3.3-RELEASE-ubuntu24.04/usr/bin/swiftc"
+    ]
+  },
+  "targetDependencyMap" : {
+    "HermesNotesCore" : [
+
+    ],
+    "HermesNotesCorePackageDiscoveredTests" : [
+      "HermesNotesCoreTests",
+      "HermesNotesCore"
+    ],
+    "HermesNotesCorePackageTests" : [
+      "HermesNotesCorePackageDiscoveredTests",
+      "HermesNotesCoreTests",
+      "HermesNotesCore"
+    ],
+    "HermesNotesCoreTests" : [
+      "HermesNotesCore"
+    ]
+  },
+  "testDiscoveryCommands" : {
+    "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageDiscoveredTests.derived/all-discovered-tests.swift" : {
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/DayStartTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/HermesTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/MarkdownFileStoreTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/MarkdownParserTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/NoteFileCodecTests.swift.o"
+        }
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageDiscoveredTests.derived/HermesNotesCoreTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageDiscoveredTests.derived/all-discovered-tests.swift"
+        }
+      ]
+    }
+  },
+  "testEntryPointCommands" : {
+    "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageTests.derived/runner.swift" : {
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/Modules/HermesNotesCorePackageDiscoveredTests.swiftmodule"
+        }
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageTests.derived/runner.swift"
+        }
+      ]
+    }
+  },
+  "traitConfiguration" : {
+    "default" : {
+
+    }
+  },
+  "writeCommands" : {
+    "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Domain/CoreTypes.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Domain/NoteSnapshot.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Files/FrontMatter.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Files/MarkdownFileStore.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Files/NoteFileCodec.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Hermes/HermesClient.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Hermes/HermesOutbox.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Hermes/HermesPayloads.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Markdown/MarkdownBlock.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Planning/DayStart.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/Sources/HermesNotesCore/Support/Slug.swift"
+        }
+      ],
+      "outputFilePath" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/sources"
+    },
+    "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageDiscoveredTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageDiscoveredTests.derived/HermesNotesCoreTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageDiscoveredTests.derived/all-discovered-tests.swift"
+        }
+      ],
+      "outputFilePath" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageDiscoveredTests.build/sources"
+    },
+    "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageTests.derived/runner.swift"
+        }
+      ],
+      "outputFilePath" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageTests.build/sources"
+    },
+    "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageTests.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/CoreTypes.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/DayStart.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/FrontMatter.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/HermesClient.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/HermesNotesCore.swiftmodule.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/HermesOutbox.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/HermesPayloads.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/MarkdownBlock.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/MarkdownFileStore.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/NoteFileCodec.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/NoteSnapshot.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCore.build/Slug.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageDiscoveredTests.build/HermesNotesCorePackageDiscoveredTests.swiftmodule.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageDiscoveredTests.build/HermesNotesCoreTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageDiscoveredTests.build/all-discovered-tests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageTests.build/HermesNotesCorePackageTests.swiftmodule.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageTests.build/runner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/DayStartTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/HermesNotesCoreTests.swiftmodule.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/HermesTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/MarkdownFileStoreTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/MarkdownParserTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/NoteFileCodecTests.swift.o"
+        }
+      ],
+      "outputFilePath" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCorePackageTests.product/Objects.LinkFileList"
+    },
+    "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/Tests/HermesNotesCoreTests/DayStartTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/Tests/HermesNotesCoreTests/HermesTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/Tests/HermesNotesCoreTests/MarkdownFileStoreTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/Tests/HermesNotesCoreTests/MarkdownParserTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/user/mytaskapp/HermesNotesCore/Tests/HermesNotesCoreTests/NoteFileCodecTests.swift"
+        }
+      ],
+      "outputFilePath" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/HermesNotesCoreTests.build/sources"
+    },
+    "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/swift-version--7BB3674F7DD9E9D5.txt" : {
+      "alwaysOutOfDate" : true,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<swift-get-version>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/tmp/claude-0/-home-user-mytaskapp/964a73d7-5bf1-5203-96f2-ded1ac40fed0/scratchpad/swift-6.3.3-RELEASE-ubuntu24.04/usr/bin/swiftc"
+        }
+      ],
+      "outputFilePath" : "/home/user/mytaskapp/HermesNotesCore/.build/x86_64-unknown-linux-gnu/debug/swift-version--7BB3674F7DD9E9D5.txt"
+    }
+  }
+}
