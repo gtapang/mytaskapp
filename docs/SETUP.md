@@ -76,7 +76,7 @@ Quick capture from anywhere: **⌘⇧Space** (Ctrl+Shift+Space on Linux/Windows)
 
 ```sh
 npm run typecheck    # strict TypeScript
-npm test             # 39 unit tests
+npm test             # 38 unit tests
 npm run build        # production build of main + renderer
 ```
 

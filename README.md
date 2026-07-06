@@ -36,7 +36,7 @@ src/main/       Electron main: JSON store (atomic writes), mirror bridge,
 src/preload/    contextBridge exposing the typed API (src/shared/api.ts).
 src/renderer/   React UI: Today · Notes · Calendar · Tasks · Eisenhower ·
                 Inbox, note editor with read mode, quick capture, settings.
-tests/          Vitest suite (39 tests).
+tests/          Vitest suite (38 tests).
 scripts/smoke.cjs  Boots the real app (Xvfb in CI), screenshots, fails on
                    renderer errors.
 ```

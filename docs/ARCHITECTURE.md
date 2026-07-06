@@ -24,7 +24,7 @@ backend.
 | Calendar | In-app month grid + day list; optional ICS feed subscriptions |
 | Quick capture | In-app + global shortcut (⌘/Ctrl+Shift+Space) from anywhere on the desktop |
 | Orchestration | Hermes HTTP API + durable offline outbox |
-| Tests | Vitest (39 tests) + an Electron boot-smoke under Xvfb in CI |
+| Tests | Vitest (38 tests) + an Electron boot-smoke under Xvfb in CI |
 
 ## Layering
 
@@ -131,7 +131,7 @@ quiet glyph, no badges except the Inbox count.
 ## Verification
 
 - `npm run typecheck` — strict TS across renderer + main configs.
-- `npm test` — 39 Vitest tests over the core (markdown, front matter, codec,
+- `npm test` — 38 Vitest tests over the core (markdown, front matter, codec,
   mirror on a real temp fs, Hermes client/outbox with a mock transport,
   day-start, ICS) and the JSON store.
 - `scripts/smoke.cjs` — boots the **real app** under Xvfb, fails on any
